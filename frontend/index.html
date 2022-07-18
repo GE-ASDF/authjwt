@@ -53,26 +53,27 @@
             const formData = new FormData(e.target);
             const {data} = await axios.post('login.php', formData);
             sessionStorage.setItem("session", data);
-        }catch(error){
-            console.log(error);
-        }
-    })
-    btnLogar.addEventListener("click", async()=>{
-        try{
-            const authSession = "Bearer "+sessionStorage.getItem("session");
-            const {data} = await axios.get('auth.php', {
-                headers:{
-                    "Authorization": authSession
-                }
-            })
             console.log(data);
         }catch(error){
-            if(error.response.data == "Expired token"){
-                alert("Sessão expirou");
-            }
             console.log(error);
         }
     })
+    // btnLogar.addEventListener("click", async()=>{
+    //     try{
+    //         const authSession = "Bearer "+sessionStorage.getItem("session");
+    //         const {data} = await axios.get('auth.php', {
+    //             headers:{
+    //                 "Authorization": authSession
+    //             }
+    //         })
+    //         console.log(data);
+    //     }catch(error){
+    //         if(error.response.data == "Expired token"){
+    //             alert("Sessão expirou");
+    //         }
+    //         console.log(error);
+    //     }
+    // })
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
