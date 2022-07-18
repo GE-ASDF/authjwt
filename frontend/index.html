@@ -29,10 +29,10 @@
                                     </div>
                             <br>
                         </div>
-                    <input type="submit" class="btn btn-primary" id="logar" value="Logar">
+                    <button type="submit" class="btn btn-primary">Logar</button>
                 </form>
+                <button id="btn_check_auth">Verificar autenticação</button>
             </section>
-            <button id="btn_check_auth">Verificar autenticação</button>
                   
     </main>
 
@@ -44,7 +44,9 @@
 
     const form = document.querySelector("#form");
     const btnLogar = document.querySelector("#btn_check_auth");
+
     axios.defaults.baseURL = "http://localhost:3000/";
+
     form.addEventListener("submit", async function(e){
         e.preventDefault();
         try{
