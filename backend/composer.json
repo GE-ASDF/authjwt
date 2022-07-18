@@ -1,0 +1,19 @@
+{
+    "name": "ander/backend",
+    "autoload": {
+        "psr-4": {
+            "Ander\\Backend\\": "src/",
+            "app\\":"app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Anderson Souza",
+            "email": "andersonsouza007@live.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.3",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
